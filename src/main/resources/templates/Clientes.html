@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<title>Clientes</title>
+<style type="text/css">
+  .contenedor_menu {
+	margin-left: 0px;
+	
+}
+.menu_item {
+	margin-left: 50px;
+}
+
+.menu_item:first-of-type {
+}
+nav {
+	display: block;
+}
+.menu_item, .logo {
+	font-size: 28px;
+	line-height: 64px;
+	text-decoration: none;
+	color: black;
+	display: inline-block;
+	float:left;
+	
+}
+header {
+    width: 1110px;
+	height: 75px;
+	background: linear-gradient(35deg, #cff, #fcc);
+}
+
+p {
+	font-size: 20px;
+	line-height: 28px;
+	color: black;
+}
+h1
+{
+color: white;
+}
+body{
+background:linear-gradient( #009, #66c2ff, #fcc, #ffeee6);
+}
+tr{
+line-height:50px;
+}
+  </style>
+  
+</head>
+<body>
+	<div class="container">
+		<center>
+		<header class="">
+        
+		<nav class="contenedor_menu">
+		 <p align = "left">Daniel Neri</p>
+		 <p align = "left" >Desarrollo De Aplicaciones Web</p>
+		
+        </nav>
+		
+		
+    </header>
+<h1>Clientes Registrados:</h1>
+<table class="table">
+	<thead>
+		<tr >
+			<th>IdCliente</th>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>Telefono</th>
+			<th>Email</th>
+			<th>Direccion</th>
+		</tr>
+	</thead>
+	<tr th:each="clientes :${clientes}" th:class="${clientesStat.odd}?'impar':'par'">
+		<td th:text="${clientes.IdCliente}"></td>
+		<td th:text="${clientes.Nombre}"></td>
+		<td th:text="${clientes.Apellidos}"></td>
+		<td th:text="${clientes.Telefono}"></td>
+		<td th:text="${clientes.Email}"></td>
+		<td th:text="${clientes.Direccion}"></td>		
+	</tr>
+
+</table>
+<br>
+
+<table class="table">
+
+<tr class="text-primary">
+	<th>
+		<ul>
+		<li>
+		<a th:href="@{/examenUnidad2/}">Inicio</a>
+	</li>
+	</ul>
+	</th>
+</tr>
+
+</table>
+
+</center>
+	</div>
+</body>
+</html>
